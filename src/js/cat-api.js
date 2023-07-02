@@ -5,14 +5,14 @@ export default axios;
 const urlBreeds = `https://api.thecatapi.com/v1/breeds`;
 const ulrImage = `https://api.thecatapi.com/v1/images/`;
 /*-------------------------------------------------------------------------------------------------------------------------------- */
-//let axios = null;
+let axiosApi = null;
 /*-------------------------------------------------------------------------------------------------------------------------------- */
 export function init(api_key) {
-  axios = require('axios').default;
-  axios.defaults.headers.common['x-api-key'] = api_key;
+  axiosApi = require('axios').default;
+  axiosApi.defaults.headers.common['x-api-key'] = api_key;
 }
 export function fetchBreeds() {
-  return axios
+  return axiosApi
     .get(urlBreeds)
     .then(response => response.data)
     .catch(error => {
@@ -21,7 +21,7 @@ export function fetchBreeds() {
     });
 }
 export function fetchCatByBreed(breedId) {
-  return axios
+  return axiosApi
     .get(`${ulrImage}${breedId}`)
     .then(response => response.data)
     .catch(error => {
