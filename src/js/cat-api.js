@@ -5,7 +5,7 @@ export default axios;
 const urlBreeds = `https://api.thecatapi.com/v1/breeds`;
 const ulrImage = `https://api.thecatapi.com/v1/images/`;
 /*-------------------------------------------------------------------------------------------------------------------------------- */
-let axios = null;
+//let axios = null;
 /*-------------------------------------------------------------------------------------------------------------------------------- */
 export function init(api_key) {
   axios = require('axios').default;
